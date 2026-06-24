@@ -1,9 +1,7 @@
-export default function Home() {
+export default function Test() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-5xl font-bold">
-        Companion is running 🚀
-      </h1>
-    </main>
+    <div className="flex bg-blue-500 p-4 text-white">
+      Welcome ComPanion
+    </div>
   );
 }
