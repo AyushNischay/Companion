@@ -28,11 +28,20 @@ model Task {
   description      String?
   deadline         DateTime?
   estimatedMinutes Int?
+  source           String   @default("manual")
   status           String   @default("pending")
+  priority         String?
+  deletedAt        DateTime?
 
   userId String
   user   User @relation(fields: [userId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([deadline])
+  @@index([status])
+  @@index([deletedAt])
+  @@index([userId, status])
 }
